@@ -29,6 +29,22 @@ for (int i = 0; i < data.Count; i++)
 }
 Console.WriteLine($"A teljes távot teljesítő férfi résztvevők átlag ideje: {osszido/db}");
 
+int maxf = 0;
+int maxn = 0;
+for (int i = 1; i < data.Count; i++)
+{
+    if (data[i].Kategoria == "Ferfi" && data[i].Tavszaz == 100 && data[maxf].IdoOraban() > data[i].IdoOraban())
+    {
+        maxf = i;
+    }
+    if (data[i].Kategoria == "Noi" && data[i].Tavszaz == 100 && data[maxn].IdoOraban() > data[i].IdoOraban())
+    {
+        maxn = i;
+    }
+}
+Console.WriteLine($"A férfi kategória győztese: {data[maxf].Nev}, rajtszáma: {data[maxf].Rajtszam}, ideje: {data[maxf].Vido}");
+Console.WriteLine($"A női kategória győztese: {data[maxn].Nev}, rajtszáma: {data[maxn].Rajtszam}, ideje: {data[maxn].Vido}");
+
 struct Verseny
 {
     public string Nev;
