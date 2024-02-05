@@ -5,6 +5,8 @@ for (int i = 0; i < input.Length; i++)
     data.Add(new Verseny(input[i]));
 }
 
+Console.WriteLine($"A versenyen {data.Count} résztvevő indult");
+
 struct Verseny
 {
     public string Nev;
