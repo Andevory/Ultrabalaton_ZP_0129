@@ -7,6 +7,16 @@ for (int i = 0; i < input.Length; i++)
 
 Console.WriteLine($"A versenyen {data.Count} résztvevő indult");
 
+int db = 0;
+for (int i = 0; i < data.Count; i++)
+{
+    if (data[i].Kategoria == "Női" && data[i].Tavszaz == 100)
+    {
+        db++;
+    }
+}
+Console.WriteLine($"A versenyt teljesítő női résztvevők száma: {db}");
+
 struct Verseny
 {
     public string Nev;
